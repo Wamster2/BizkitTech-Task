@@ -32,7 +32,7 @@ def search_users(args):
     filtered_users = []
 
     for user in USERS:
-        include_user = True
+        include_user = False
 
         if "id" in args and user["id"] == args["id"]:
             include_user = True
@@ -42,8 +42,6 @@ def search_users(args):
             include_user = True
         elif "occupation" in args and args["occupation"].lower() in user["occupation"].lower():
             include_user = True
-        else:
-            include_user = False
 
         if include_user:
             filtered_users.append(user)
